@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <script>
+        function setUser(e)
+        {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            if(!name || !email || !password)
+            {
+                alert(`All field's are required`);
+            }
+            else{
+                let gender = ""
+                if(document.getElementById('male').checked)
+                {
+                    gender = "male";
+                }
+                else
+                {
+                    gender = "female"
+                }
+
+                const user ={
+                    name,
+                    email,
+                    password,
+                    gender
+                }
+                localStorage.setItem('user',JSON.stringify(user));
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <label for="name">name :</label>
+        <input type="text" name="name" id="name">
+        <br>
+        <br>
+        <label for="email">email:</label>
+        <input type="text" name="email" id="email">
+        <br>
+        <br>
+        <label for="gender">gender:</label>
+        <label for="male">male</label>
+        <input type="radio" name="gender" id="male">
+        <label for="female">female</label>
+        <input type="radio" name="gender" id="female">
+        <br>
+        <br>
+        <label for="password">password:</label>
+        <input type="text" name="password" id="password">
+        <br>
+        <br>
+        <input type="submit" onclick="setUser(event)">
+    </form>
+</body>
+</html>

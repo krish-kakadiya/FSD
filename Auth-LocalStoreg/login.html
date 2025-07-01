@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <script>
+    function Login(e) {
+        e.preventDefault();
+        const user = JSON.parse(localStorage.getItem('user')); 
+        console.log(user)
+
+        const password = document.getElementById('password').value;
+        const email = document.getElementById('email').value;
+
+        if(!password || !email){
+            alert('all fields are required')
+        }
+        else
+        {
+            if(password === user.password && email === user.email){
+                console.log('login success full');
+                window.location.href = "home.html"
+            }
+            else{
+                alert('enter correct details')
+            }
+        }
+    } 
+    </script>
+</head>
+<body>
+  <form>
+    <label for="email">Email:</label>
+    <input type="text" id="email">
+    <br><br>
+
+    <label for="password">Password:</label>
+    <input type="text" id="password">
+    <br><br>
+
+    <button type="submit" onclick="Login(event)">Submit</button>
+  </form>
+</body>
+</html>
