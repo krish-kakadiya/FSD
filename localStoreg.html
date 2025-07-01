@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to store data in local storge</title>
+    <script>
+        const getData= ()=>{
+            console.log('get data is called');
+            const x = document.getElementById('data')
+            const mydata = JSON.parse(localStorage.getItem('myobj'))
+
+            x.innerHTML = `
+            name = ${mydata.name}
+            age = ${mydata.age}
+            id = ${mydata.id}
+            `
+        }
+        // function setData(){
+        //     const obj = {
+        //         name:'krish',
+        //         age:12,
+        //         id:'23cs029'
+        //     }
+        //     localStorage.setItem('myobj',JSON.stringify(obj))
+        // }
+    </script>
+</head>
+<body>
+    <input type="button" value="set data" onclick="setData()">
+    <input type="button" value="get data" onclick="getData()">
+    <p id="data"></p>
+</body>
+</html>
