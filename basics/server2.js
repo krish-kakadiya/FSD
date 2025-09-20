@@ -1,6 +1,6 @@
-const http = require('http')
+import { createServer } from 'http';
 
-http.createServer((req,res)=>{
+createServer((req,res)=>{
     if(req.url == '/'){
         res.end(`<h1>HOME page</h1>`)
     }
