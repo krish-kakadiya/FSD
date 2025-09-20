@@ -1,11 +1,13 @@
 
 import homeRouter from "./routes/home.js";
 import express from "express";
+import logsRouter from "./routes/logs.js";
 const app = express();
 
 
 // Routes
 app.use("/", homeRouter);
+app.use("/", logsRouter);
 
 // Simple 404 handler
 app.use((req, res) => {
