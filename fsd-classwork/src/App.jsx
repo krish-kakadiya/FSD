@@ -5,6 +5,7 @@ import WelcomeClock from './Practical/Practical3/WelcomeClock'
 import CounterApp from './Practical/Practical4/CounterApp'
 import Calculator from './Practical/Practical5/Calculator'
 import TodoList from './Practical/Practical6/TodoList'
+import Sidebar from './Practical/Practical7/Sidebar'
 
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
 
   return (
     <>
-      <TodoList/>
+      <Sidebar/>
     </>
   )
 }

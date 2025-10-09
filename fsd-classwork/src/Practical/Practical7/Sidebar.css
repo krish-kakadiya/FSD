@@ -1,0 +1,89 @@
+.sidebar-container {
+  display: flex;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background: #f3f4f6;
+}
+
+/* Toggle Button */
+.toggle-btn {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-size: 1.5rem;
+  background: #1e1e2f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.sidebar {
+  position: fixed;
+  left: -250px;
+  top: 0;
+  height: 100%;
+  width: 250px;
+  background: #1e1e2f;
+  color: white;
+  transition: 0.3s ease;
+  padding-top: 60px;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar .logo {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+  text-align: center;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 10px 0;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar ul li a:hover {
+  background: #00b894;
+  border-radius: 6px;
+}
+
+/* Page Content */
+.content {
+  flex: 1;
+  margin-left: 60px;
+  padding: 40px;
+  transition: margin-left 0.3s ease;
+  align-items: center;
+  text-align: center;
+}
+
+.sidebar.open ~ .content {
+  margin-left: 250px;
+}
+
+section {
+  margin: 60px 0;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
